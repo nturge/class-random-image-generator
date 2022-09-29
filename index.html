@@ -1,15 +1,34 @@
-<img id="dog" src= "https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_3220.jpg" alt="description of image">
+<img id="dog" src="https://images.dog.ceo/breeds/mexicanhairless/n02113978_1349.jpg">
 
 <script>
+  
 const dog = document.querySelector('#dog')
 const dogURLs = [
-  'https://images.dog.ceo/breeds/bouvier/n02106382_1787.jpg'
-  'https://images.dog.ceo/breeds/otterhound/n02091635_134.jpg'
-  'https://images.dog.ceo/breeds/collie-border/n02106166_1452.jpg'
-]
+  'https://images.dog.ceo/breeds/bouvier/n02106382_1787.jpg',
+  'https://images.dog.ceo/breeds/otterhound/n02091635_134.jpg',
+  'https://images.dog.ceo/breeds/collie-border/n02106166_1452.jpg',
+  'https://images.dog.ceo/breeds/hound-ibizan/n02091244_1076.jpg',
+  'https://images.dog.ceo/breeds/appenzeller/n02107908_3254.jpg',
+  'https://images.dog.ceo/breeds/vizsla/n02100583_12047.jpg',
+  ]
+const bark = document.querySelector('#bark')
+const barkTC = [0.043, 0.63, 1.468, 2.425]
 
 function changeDog() {
-  const ran = Math.floor(Math.random * dogURLs.length)
-  dog.src = dogURLs[ran]
+  const ranDec = Math.random() * dogURLs.length
+  const ranInt = Math.round(ranDec)
+  dog.src = dogURLs[ranInt]
+  const ranTC = Math.floor(Math.random() * barkTC.length)
+  bark.currentTime = barkTC[ranTC]
+  bark.play()
+  const delay = 0.498 * 1000
+  setTimeout(() => bark.pause(), delay)
 }
+  
+ 
+  
+  dog.addEventListener('click', changeDog)
+  dog.addEventListener('mouseover', changeDog)
+  dog.addEventListener('mouse')
+  
 </script>
