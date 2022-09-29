@@ -1,1 +1,15 @@
+<img id="dog" src= "https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_3220.jpg" alt="description of image">
 
+<script>
+const dog = document.querySelector('#dog')
+const dogURLs = [
+  'https://images.dog.ceo/breeds/bouvier/n02106382_1787.jpg'
+  'https://images.dog.ceo/breeds/otterhound/n02091635_134.jpg'
+  'https://images.dog.ceo/breeds/collie-border/n02106166_1452.jpg'
+]
+
+function changeDog() {
+  const ran = Math.floor(Math.random * dogURLs.length)
+  dog.src = dogURLs[ran]
+}
+</script>
